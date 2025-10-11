@@ -4,10 +4,10 @@ const Home = () => {
   return (
     <div className='home-container'>
       <h1 className='home-title'>
-        Welcome to Experience Sharing Platform!
+        Welcome to Wisdom Pool - A Pool of Shared Experiences and Insights!
       </h1>
       <p className='home-description'>
-        This platform is designed to help students share, discover interview experiences of candidates of All Companies
+        This platform is designed to help students share, discover placement experiences of candidates of All Companies
       </p>
       <ul className='home-list'>
         <li>Browse interview experiences shared by candidates.</li>

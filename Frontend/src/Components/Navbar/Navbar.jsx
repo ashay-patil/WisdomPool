@@ -49,7 +49,7 @@ const Navbar = () => {
   return (
     <nav className="navbar-container">
       <div className="navbar-left" onClick={() => handleNavigate("/")}>
-        <h2 className="navbar-logo">Interview<span>Insight</span></h2>
+        <h2 className="navbar-logo">Wisdom<span>Pool</span></h2>
       </div>
 
       <div className="navbar-links">
