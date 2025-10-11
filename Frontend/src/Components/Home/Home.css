@@ -1,0 +1,63 @@
+/* Home.css */
+
+.home-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 30px 25px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.home-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.home-title {
+  font-size: 32px;
+  color: #1f2937;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.home-description {
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.home-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.home-list li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #374151;
+}
+
+@media (max-width: 600px) {
+  .home-container {
+    padding: 20px 15px;
+  }
+
+  .home-title {
+    font-size: 26px;
+  }
+
+  .home-description {
+    font-size: 14px;
+  }
+
+  .home-list li {
+    font-size: 14px;
+  }
+}

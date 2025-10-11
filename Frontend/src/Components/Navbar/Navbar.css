@@ -1,0 +1,89 @@
+/* Navbar.css */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  cursor: pointer;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.navbar-logo span {
+  color: #4a90e2;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #4a90e2;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-login,
+.navbar-logout {
+  background-color: #4a90e2;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-login:hover,
+.navbar-logout:hover {
+  background-color: #357abd;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-welcome {
+  font-size: 14px;
+  color: #374151;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none; /* hide links on small screens or implement a hamburger menu */
+  }
+  
+  .navbar-container {
+    padding: 12px 20px;
+  }
+}

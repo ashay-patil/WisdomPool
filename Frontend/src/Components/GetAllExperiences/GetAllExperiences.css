@@ -1,0 +1,113 @@
+/* GetAllExperiences.css */
+
+.all-exp-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.all-exp-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 28px;
+}
+
+.loading,
+.error {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-top: 50px;
+}
+
+.experience-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.experience-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.experience-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.experience-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.desc-preview {
+  margin-top: 10px;
+  font-style: italic;
+  color: #6b7280;
+}
+
+.user-info {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 13px;
+  color: #374151;
+}
+
+.user-email {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.status {
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.status.pending {
+  background-color: #fbbf24; /* Yellow */
+}
+
+.status.selected {
+  background-color: #10b981; /* Green */
+}
+
+.status.rejected {
+  background-color: #ef4444; /* Red */
+}
+
+.status.ghosted {
+  background-color: #6b7280; /* Gray */
+}
+
+@media (max-width: 600px) {
+  .experience-card {
+    padding: 15px;
+  }
+
+  .all-exp-container h1 {
+    font-size: 24px;
+  }
+
+  .desc-preview {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,144 @@
+/* MyExperiences.css */
+
+.my-exp-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .my-exp-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+  }
+  
+  .loading,
+  .error,
+  .no-exp {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-top: 50px;
+  }
+  
+  .exp-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .exp-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+  
+  .exp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+  
+  .exp-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #1f2937;
+  }
+  
+  .exp-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #4b5563;
+  }
+  
+  .status {
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: capitalize;
+    color: #fff;
+  }
+  
+  .status.pending {
+    background-color: #fbbf24; /* Yellow */
+  }
+  
+  .status.selected {
+    background-color: #10b981; /* Green */
+  }
+  
+  .status.rejected {
+    background-color: #ef4444; /* Red */
+  }
+  
+  .status.ghosted {
+    background-color: #6b7280; /* Gray */
+  }
+  
+  .card-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  
+  .card-buttons button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-view {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .btn-view:hover {
+    background-color: #357abd;
+  }
+  
+  .btn-edit {
+    background-color: #f59e0b;
+    color: white;
+  }
+  
+  .btn-edit:hover {
+    background-color: #d97706;
+  }
+  
+  .btn-delete {
+    background-color: #ef4444;
+    color: white;
+  }
+  
+  .btn-delete:hover {
+    background-color: #b91c1c;
+  }
+  
+  @media (max-width: 600px) {
+    .exp-card {
+      padding: 15px;
+    }
+  
+    .my-exp-container h2 {
+      font-size: 24px;
+    }
+  
+    .card-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .card-buttons button {
+      width: 100%;
+    }
+  }
+  

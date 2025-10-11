@@ -1,0 +1,102 @@
+/* CreateExperience.css */
+
+.create-exp-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px 40px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  .create-exp-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .field label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .field input,
+  .field textarea,
+  .field select {
+    padding: 10px 15px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+  }
+  
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .btn button {
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn button:hover {
+    background-color: #357abd;
+    box-shadow: 0 4px 12px rgba(53, 122, 189, 0.3);
+  }
+  
+  .btn button:disabled {
+    background-color: #a0c4f2;
+    cursor: not-allowed;
+  }
+  
+  .err {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #d9534f;
+  }
+  
+  .err:empty {
+    display: none;
+  }
+  
+  .err:contains("Shared Successfully") {
+    color: #28a745;
+  }
+  

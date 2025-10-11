@@ -1,0 +1,94 @@
+/* Register.css */
+
+/* Reuse the same container as Login */
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.auth-container h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #1f2937;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-container input {
+  padding: 12px 15px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+}
+
+.auth-container button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: #357abd;
+}
+
+.auth-container button:disabled {
+  background-color: #a0c4f2;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #16a34a; /* green for success */
+}
+
+.redirect-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.redirect-text span {
+  color: #4a90e2;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.redirect-text span:hover {
+  color: #357abd;
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 40px 15px;
+    padding: 30px 20px;
+  }
+
+  .auth-container h2 {
+    font-size: 20px;
+  }
+}

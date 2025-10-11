@@ -1,0 +1,70 @@
+/* Footer.css */
+
+.footer {
+    background-color: #1e1e2f;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer a {
+    color: #4a90e2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: #357abd;
+    text-decoration: underline;
+  }
+  
+  .footer-made-by,
+  .footer-copyright,
+  .footer-made-with,
+  .footer-contact,
+  .footer-github-link {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .footer-made-with .footer-heart {
+    color: #e74c3c;
+    margin: 0 4px;
+    animation: heartbeat 1s infinite;
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.2);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .footer-contact-link {
+    font-weight: 500;
+  }
+  
+  .footer-github-link a {
+    font-weight: 500;
+    word-break: break-word;
+  }
+  
+  @media (max-width: 480px) {
+    .footer {
+      font-size: 13px;
+      padding: 20px 10px;
+    }
+  }
+  
