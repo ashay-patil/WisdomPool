@@ -1,6 +1,6 @@
-## AI-Powered Interview Experience Sharing Platform
+## AI-Powered Placement Experience Sharing Platform
 
-An end-to-end web application where candidates can share interview experiences and readers can explore, learn, and get AI-generated insights tailored to each experience. The platform is split into a Node.js/Express backend and a React (Vite) frontend. It supports authentication, CRUD operations for interview experiences, and an AI assistant powered by Google Gemini that transforms raw experiences into polished, actionable guidance.
+An end-to-end web application where candidates can share placement experiences and readers can explore, learn, and get AI-generated insights tailored to each experience. The platform is split into a Node.js/Express backend and a React (Vite) frontend. It supports authentication, CRUD operations for experiences, and an AI assistant powered by Google Gemini that transforms raw experiences into polished, actionable guidance.
 
 ### Key Features
 - **Authentication**: Register and login with JWT-based protected routes.
@@ -20,7 +20,7 @@ An end-to-end web application where candidates can share interview experiences a
 ## Monorepo Structure
 
 ```
-Ai_Powered_Interview_Experience_Sharing_Platform/
+WisdomPool/
   Backend/
     app.js
     controllers/
