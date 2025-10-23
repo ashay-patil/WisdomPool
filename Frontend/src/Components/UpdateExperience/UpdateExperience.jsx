@@ -27,7 +27,7 @@ const UpdateExperience = () => {
     const fetchExperience = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:3000/api/v1/protected/get-experience/${id}`,
+          `http://localhost:3000/api/v1/public/get-single-experience/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
