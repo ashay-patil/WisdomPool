@@ -10,6 +10,7 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import UpdateExperience from './Components/UpdateExperience';
 import './App.css';
+import CareerMentor from './Components/Ai_Career_Mentor/CareerMentor';
 const App = () => {
   return (
     <Router>
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/share-experience" element={<CreateExperience />} />
           <Route path="/experience/:id" element={<GetAnExperience />} />
           <Route path="/update-experience/:id" element={<UpdateExperience />} />
+          <Route path="/ai-career-mentor" element={<CareerMentor />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

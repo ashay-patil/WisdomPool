@@ -1,0 +1,128 @@
+.career-mentor-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  
+  .career-mentor-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 30px;
+  }
+  
+  .career-mentor-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .career-mentor-form input,
+  .career-mentor-form select {
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  
+  .career-mentor-form input:focus,
+  .career-mentor-form select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+  }
+  
+  .career-mentor-form button {
+    background-color: #2563eb;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .career-mentor-form button:hover:not(:disabled) {
+    background-color: #1d4ed8;
+  }
+  
+  .career-mentor-form button:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+  }
+  
+  .career-mentor-loading {
+    text-align: center;
+    color: #2563eb;
+    font-weight: 500;
+    margin-top: 10px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+  }
+  
+  .career-mentor-error {
+    color: #dc2626;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 10px 15px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .career-mentor-response {
+    margin-top: 25px;
+    padding: 25px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+    line-height: 1.6;
+  }
+  
+  .career-mentor-response h1,
+  .career-mentor-response h2,
+  .career-mentor-response h3 {
+    color: #1d4ed8;
+    margin-top: 20px;
+  }
+  
+  .career-mentor-response ul {
+    list-style: disc;
+    padding-left: 25px;
+    margin-top: 10px;
+  }
+  
+  .career-mentor-response strong {
+    color: #0f172a;
+    font-weight: 600;
+  }
+  
+  .career-mentor-response p {
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .career-mentor-container {
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    .career-mentor-container h1 {
+      font-size: 1.5rem;
+    }
+  }
+  

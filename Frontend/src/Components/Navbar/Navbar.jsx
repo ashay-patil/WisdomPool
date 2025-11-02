@@ -57,6 +57,7 @@ const Navbar = () => {
         <Link to="/experiences" className="navbar-link">All Experiences</Link>
         <Link to="/my-experiences" className="navbar-link">My Experiences</Link>
         <Link to="/share-experience" className="navbar-link">Share Experience</Link>
+        <Link to="/ai-career-mentor" className="navbar-link">AI Career Mentor</Link>
       </div>
 
       <div className="navbar-right">

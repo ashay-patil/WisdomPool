@@ -9,6 +9,7 @@ const experienceProtected = require('./routes/experience-protected');
 const experiencePublic = require('./routes/experience-public');
 const user = require('./routes/user');
 const ai = require('./routes/aiService');
+const careerMentor = require('./routes/career-mentor');
 app.use(cors());
 app.use(express.json());
 
@@ -16,6 +17,7 @@ app.use('/api/v1/auth', user);
 app.use('/api/v1/protected',experienceProtected);
 app.use('/api/v1/public',experiencePublic);
 app.use('/api/v1/ask-AI',ai);
+app.use('/api/v1/ai-career-mentor',careerMentor);
 
 
 
