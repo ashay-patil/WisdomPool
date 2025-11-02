@@ -2,6 +2,9 @@
 
 An end-to-end web application where candidates can share placement experiences and readers can explore, learn, and get AI-generated insights tailored to each experience. The platform is split into a Node.js/Express backend and a React (Vite) frontend. It supports authentication, CRUD operations for experiences, an AI assistant powered by Google Gemini that transforms raw experiences into polished, actionable guidance, and an AI Career Mentor that provides personalized roadmaps based on aggregated interview experiences.
 
+## Demo Video - Ashay Patil Youtube Channel
+[![Demo Video](https://img.youtube.com/vi/I6R6766Ax38/0.jpg)](https://youtu.be/I6R6766Ax38?si=TFxgID8LdVEK7QTr)
+
 ### Key Features
 - **Authentication**: Register and login with JWT-based protected routes.
 - **Share Experiences**: Authenticated users can create, update, delete, and list their own experiences.
