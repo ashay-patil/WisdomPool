@@ -1,12 +1,13 @@
 ## AI-Powered Placement Experience Sharing Platform
 
-An end-to-end web application where candidates can share placement experiences and readers can explore, learn, and get AI-generated insights tailored to each experience. The platform is split into a Node.js/Express backend and a React (Vite) frontend. It supports authentication, CRUD operations for experiences, and an AI assistant powered by Google Gemini that transforms raw experiences into polished, actionable guidance.
+An end-to-end web application where candidates can share placement experiences and readers can explore, learn, and get AI-generated insights tailored to each experience. The platform is split into a Node.js/Express backend and a React (Vite) frontend. It supports authentication, CRUD operations for experiences, an AI assistant powered by Google Gemini that transforms raw experiences into polished, actionable guidance, and an AI Career Mentor that provides personalized roadmaps based on aggregated interview experiences.
 
 ### Key Features
 - **Authentication**: Register and login with JWT-based protected routes.
 - **Share Experiences**: Authenticated users can create, update, delete, and list their own experiences.
 - **Browse Public Experiences**: Anyone can explore all shared experiences and view an individual experience.
 - **AI Insights (Gemini)**: One-click AI analysis of a selected experience into an elegant Markdown guide.
+- **AI Career Mentor**: Get personalized career roadmap and preparation advice based on aggregated interview experiences for specific companies, positions, and roles.
 - **Clean UI/UX**: Modern, responsive React app with routing for core flows.
 
 ### Tech Stack
@@ -75,7 +76,8 @@ npm run start
 - `middlewares/authorize.js`: Verifies Bearer JWT; sets `req.user`.
 - `middlewares/error-handler.js`: Unified error responses for custom errors.
 - `controllers/*`: Business logic for auth, public/protected experiences, and AI.
-- `services/aiService.js`: Gemini client and generation logic.
+- `services/aiService.js`: Gemini client and generation logic for individual experiences.
+- `services/aiCareerMentor.js`: Career mentor service that analyzes aggregated experiences and provides roadmap guidance.
 - `routes/*`: Route definitions mounted in `app.js`.
 
 ### Routes Overview
@@ -99,6 +101,9 @@ npm run start
 
 - AI Service (`/api/v1/ask-AI`)
   - `GET /:id` → Generate Gemini Markdown guidance for experience `id`
+
+- AI Career Mentor (`/api/v1/ai-career-mentor`)
+  - `GET /career-mentor?company=<name>&position=<position>&role=<role>&status=<status>` → Get personalized career roadmap based on aggregated experiences
 
 ### Example Requests
 
@@ -138,6 +143,11 @@ AI Insights for an Experience:
 curl http://localhost:3000/api/v1/ask-AI/<experienceId>
 ```
 
+Career Mentor Guidance:
+```bash
+curl "http://localhost:3000/api/v1/ai-career-mentor/career-mentor?company=Google&position=Software%20Engineer&role=Backend&status=all"
+```
+
 ### Authentication & Authorization
 - JWT is issued at login and must be included as `Authorization: Bearer <token>` for protected routes.
 - The `authorize` middleware validates the token and populates `req.user`.
@@ -168,10 +178,11 @@ The frontend references the backend at `http://localhost:3000`. If your backend 
 ### Primary Routes (SPA)
 - `/` → Home (landing within `Layout`)
 - `/experiences` → List all public experiences
-- `/experience/:id` → View a single experience; includes “Get Insights From AI”
+- `/experience/:id` → View a single experience; includes "Get Insights From AI"
 - `/share-experience` → Create a new experience (requires login)
 - `/my-experiences` → Manage your experiences; view/edit/delete
 - `/update-experience/:id` → Update your experience
+- `/ai-career-mentor` → AI Career Mentor for personalized roadmap and preparation advice
 - `/login` → Login
 - `/register` → Register
 
@@ -179,15 +190,17 @@ The frontend references the backend at `http://localhost:3000`. If your backend 
 - **Auth**: On login, the JWT is stored in `localStorage` as `token`. Protected views attach `Authorization: Bearer <token>`.
 - **Share & Manage**: Users can add a new experience, view their own list, update details, and delete items.
 - **Explore**: Public feed shows all experiences with quick metadata and author info.
-- **AI Guidance**: On an experience page, pressing “Get Insights From AI” fetches Gemini-generated Markdown rendered by React Markdown.
+- **AI Guidance**: On an experience page, pressing "Get Insights From AI" fetches Gemini-generated Markdown rendered by React Markdown.
+- **Career Mentor**: Enter company, position, role, and status to get AI-generated personalized roadmap and preparation advice based on aggregated interview experiences.
 
 ### Important Components
 - `Components/Login` & `Components/Register`: Auth forms; Axios requests to backend.
 - `Components/CreateExperience`: Form to create experience; sends JWT in headers.
 - `Components/GetAllExperiences`: Public list view with cards and author info.
 - `Components/GetAnExperience`: Single experience view with AI insights via React Markdown.
-- `Components/GetAllMyExperiences`: User’s own experiences with edit/delete controls.
+- `Components/GetAllMyExperiences`: User's own experiences with edit/delete controls.
 - `Components/UpdateExperience`: Edit form supporting partial updates.
+- `Components/Ai_Career_Mentor/CareerMentor`: AI Career Mentor interface with filters and Markdown response rendering.
 - `Components/Layout`, `Navbar`, `Footer`: Shell and navigation.
 
 ---
