@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('express-async-errors');
 require('dotenv').config();
 const cors = require('cors');
 const errorHandler = require('./middlewares/error-handler');
@@ -10,6 +11,7 @@ const experiencePublic = require('./routes/experience-public');
 const user = require('./routes/user');
 const ai = require('./routes/aiService');
 const careerMentor = require('./routes/career-mentor');
+
 app.use(cors());
 app.use(express.json());
 

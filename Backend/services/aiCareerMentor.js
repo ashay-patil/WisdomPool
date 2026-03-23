@@ -18,7 +18,7 @@ Status: ${exp.status}
   }).join('\n-----------------------------\n');
 
   const model = ai.getGenerativeModel({
-    model: "gemini-2.0-flash",
+    model: "models/gemini-2.5-flash",
     systemInstruction: `You are an AI-powered Career Mentor for a job-seeking platform. Your task is to provide personalized career advice based on analysis of existing users' interview experience. You are not just summarizing—you are advising, inspiring, and educating!
     You are provided with multiple users' interview experience.
     You are to analyze the interview experience of the users and provide a personalized career roadmap based on the analysis.

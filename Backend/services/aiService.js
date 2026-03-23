@@ -4,7 +4,7 @@ const ai = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY);
 
 async function main(prompt) {
   const model = ai.getGenerativeModel({
-    model: "gemini-2.0-flash",
+    model: "models/gemini-2.5-flash",
     systemInstruction: `You are an AI-powered Interview Experience Guide for an interview-sharing platform. Your task is to transform structured fields about a user's interview experience into a compelling, informative, and empathetic narrative aimed at helping other job seekers. You are not just summarizing—you are advising, inspiring, and educating!
 
 ALWAYS return your full answer in well-formatted Markdown, using headings, bullet points, and bold where helpful.
