@@ -11,9 +11,11 @@ const SingleExperience = () => {
   const [aiResponse, setAiResponse] = useState(
     "Gemini AI is always here to help you! Just click"
   );
+  const [likeError, setLikeError] = useState(false);
+  const [totalLikes, setTotalLikes] = useState(0);
   const [aiLoading, setAiLoading] = useState(false);
   const [aiError, setAiError] = useState(false);
-
+  const [like, setLike]= useState(false);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
@@ -29,6 +31,8 @@ const SingleExperience = () => {
           }
         );
         setExperience(data.experience);
+        console.log(data);
+        setTotalLikes(data.experience.likes ? data.experience.likes : 0);
       } catch (err) {
         console.error("Error fetching experience:", err);
         setError(err);
@@ -36,8 +40,25 @@ const SingleExperience = () => {
         setLoading(false);
       }
     };
-
+    const fetchLikeStatus = async () =>{
+      try {
+        const { data } = await axios.get(
+          `http://localhost:3000/api/v1/protected/get-like-status/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+        console.log("fetchLikeStatus : ",data);
+        setLike(data.liked);
+      } catch (err) {
+        console.error("Error fetching like:", err);
+        setLikeError(err);
+      }
+    }
     fetchExperience();
+    fetchLikeStatus();
   }, [id, token]);
 
   const askAi = async () => {
@@ -56,7 +77,25 @@ const SingleExperience = () => {
       setAiLoading(false);
     }
   };
+  const handleLikeToggle = async ()=>{
+       try {
+        const { data } = await axios.get(
+          `http://localhost:3000/api/v1/protected/toggle-like/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
+        setLike(data.liked);
+        setTotalLikes(data.totalLikes);
+        
+      } catch (err) {
+        console.error("Error fetching experience:", err);
+        setLikeError(err);
+      }
+  }
   if (loading) return <div className="loading">Loading experience...</div>;
   if (error) return <div className="error">{error.response.data.msg}</div>;
   if (!experience) return <div className="error">No experience found.</div>;
@@ -74,7 +113,7 @@ const SingleExperience = () => {
         <p><strong>Status:</strong> <span className={`status ${experience.status}`}>{experience.status}</span></p>
         <p><strong>Rounds:</strong> {experience.rounds}</p>
         <p><strong>Date:</strong> {new Date(experience.interviewDate).toLocaleDateString()}</p>
-
+        <p><strong>Likes:</strong>{totalLikes}</p>
         <div className="exp-description">
           <h3>Experience Description</h3>
           <p>{experience.description || "No description provided."}</p>
@@ -88,7 +127,8 @@ const SingleExperience = () => {
           </div>
         )}
       </div>
-
+        <button onClick={handleLikeToggle}>{like ? 'Liked' :'Not Liked'}</button>
+        <p>{likeError}</p>
       <button
         className="get-Ai-Response"
         onClick={askAi}
