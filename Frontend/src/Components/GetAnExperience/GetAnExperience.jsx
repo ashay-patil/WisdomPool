@@ -3,6 +3,13 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
+
+
 const SingleExperience = () => {
   const { id } = useParams();
   const [experience, setExperience] = useState(null);
@@ -11,7 +18,6 @@ const SingleExperience = () => {
   const [aiResponse, setAiResponse] = useState(
     "Gemini AI is always here to help you! Just click"
   );
-  const [likeError, setLikeError] = useState(false);
   const [totalLikes, setTotalLikes] = useState(0);
   const [aiLoading, setAiLoading] = useState(false);
   const [aiError, setAiError] = useState(false);
@@ -54,7 +60,6 @@ const SingleExperience = () => {
         setLike(data.liked);
       } catch (err) {
         console.error("Error fetching like:", err);
-        setLikeError(err);
       }
     }
     fetchExperience();
@@ -114,6 +119,12 @@ const SingleExperience = () => {
         <p><strong>Rounds:</strong> {experience.rounds}</p>
         <p><strong>Date:</strong> {new Date(experience.interviewDate).toLocaleDateString()}</p>
         <p><strong>Likes:</strong>{totalLikes}</p>
+        <p> <strong>Like the Post</strong> : 
+  <FontAwesomeIcon onClick={handleLikeToggle}
+    icon={like ? faHeartSolid : faHeartRegular}
+    style={{ cursor:"pointer",backgroundColor : "white",color: like ? 'red' : 'gray', height:'50px', display:"flex", alignItems:"center",justifyContent:"center"}}
+  />
+</p>
         <div className="exp-description">
           <h3>Experience Description</h3>
           <p>{experience.description || "No description provided."}</p>
@@ -127,8 +138,7 @@ const SingleExperience = () => {
           </div>
         )}
       </div>
-        <button onClick={handleLikeToggle}>{like ? 'Liked' :'Not Liked'}</button>
-        <p>{likeError}</p>
+
       <button
         className="get-Ai-Response"
         onClick={askAi}
